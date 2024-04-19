@@ -1,0 +1,22 @@
+{
+  "name": "dns-host",
+  "version": "1.0.0",
+  "description": "DNS Remote Host Proxyer (eg. Github)",
+  "author": "lin pengteng <china.linpengteng@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "zx scripts/bin.mjs"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "zx": "^8.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=7"
+  }
+}
