@@ -59,11 +59,27 @@ const updater = async arr => {
 const nslookup = async url => {
   try {
     const regex = new RegExp(`.*Name:\\s*[\\S]+\\s*Address:\\s*([0-9.]+)\\s*.*`, 'ims')
-    const stdout = (await $ `nslookup ${url}`).stdout
-    return stdout.replace(regex, '$1')
-  } catch {
-    return ''
-  }
+    const dns = (await $ `nslookup ${url}`).stdout
+    const ip = dns.replace(regex, '$1')
+
+    if (!/\d+\.\d+\.\d+\.\d+/.test(ip)) {
+      return ''
+    }
+
+    if (ip === '127.0.0.1') {
+      return ''
+    }
+
+    if (ip === '0.0.0.0') {
+      return ''
+    }
+
+    if (ip) {
+      return ip
+    }
+  } catch {}
+
+  return ''
 }
 
 writer([
