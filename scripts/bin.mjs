@@ -47,12 +47,18 @@ const updater = async arr => {
     }
   }
 
+  templates.sort((next, prev) => {
+    const nexts = next.split(/\s/)
+    const prevs = prev.split(/\s/)
+    return nexts[0].length < prevs[0].length ? -1 : 1
+  })
+
   return templates.join('\n')
 }
 
 const nslookup = async url => {
   try {
-    const regex = new RegExp(`.*Name:\\s*${url}\\s*Address:\\s*([0-9.]+)\\s*.*`, 'ims')
+    const regex = new RegExp(`.*Name:\\s*[\\S]+\\s*Address:\\s*([0-9.]+)\\s*.*`, 'ims')
     const stdout = (await $ `nslookup ${url}`).stdout
     return stdout.replace(regex, '$1')
   } catch {
@@ -62,6 +68,30 @@ const nslookup = async url => {
 
 writer([
   './public/host.txt',
+  'pipelines.actions.githubusercontent.com',
+  'user-images.githubusercontent.com',
+  'favicons.githubusercontent.com',
+  'desktop.githubusercontent.com',
+  'objects.githubusercontent.com',
+  'github.global.ssl.fastly.net',
+  'media.githubusercontent.com',
+  'cloud.githubusercontent.com',
+  'camo.githubusercontent.com',
+  'raw.githubusercontent.com',
+  'github.githubassets.com',
+  'github.map.fastly.net',
+  'education.github.com',
+  'collector.github.com',
+  'codeload.github.com',
+  'central.github.com',
+  'githubstatus.com',
+  'alive.github.com',
+  'github.community',
+  'live.github.com',
+  'gist.github.com',
+  'api.github.com',
+  'github.blog',
   'github.com',
-  'github.io'
+  'github.io',
+  'vscode.dev'
 ])

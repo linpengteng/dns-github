@@ -4,7 +4,10 @@ name: update-remote-host
 # Trigger
 on:
   push:
-    branches: [master]
+    branches: [main]
+
+  schedule:
+    - cron: '0 * * * *'
 
   workflow_dispatch:
 
