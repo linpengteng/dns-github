@@ -1,6 +1,5 @@
 #!/usr/bin/env zx
 
-
 const writer = async arr => {
   let temp = {}
   const list = []
@@ -108,6 +107,6 @@ writer([
   'api.github.com',
   'github.blog',
   'github.com',
-  'github.io',
-  'vscode.dev'
+  'vscode.dev',
+  'github.io'
 ])
