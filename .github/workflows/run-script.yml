@@ -67,7 +67,7 @@ jobs:
     needs: github-host
     steps:
       - name: Add And Push Gitee
-        uses: Yikun/hub-mirror-action@v1.4
+        uses: Yikun/hub-mirror-action@master
         with:
           src: github/dns-host
           dst: gitee/dns-host
