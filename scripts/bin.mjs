@@ -33,7 +33,7 @@ const updater = async arr => {
   const templates = []
   const datetime = new Date().toUTCString()
 
-  templates.push(`# Update time: ${datetime}\n`)
+  templates.push(`# Update: ${datetime}\n`)
 
   for (const url of arr) {
     if (url) {
