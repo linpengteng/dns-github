@@ -77,14 +77,14 @@ jobs:
           force_update: true
           account_type: org
 
-  # deploy-gitee-repo:
-  #   runs-on: ubuntu-latest
-  #   needs: push-gitee-repo
-  #   steps:
-  #     - name: Deploy Gitee Pages
-  #       uses: yanglbme/gitee-pages-action@main
-  #       with:
-  #         gitee-username: ${{ secrets.GITEE_USERNAME }}
-  #         gitee-password: ${{ secrets.GITEE_PASSWORD }}
-  #         gitee-repo: dns-host/github
-  #         branch: gh-pages
+  deploy-gitee-repo:
+    runs-on: ubuntu-latest
+    needs: push-gitee-repo
+    steps:
+      - name: Deploy Gitee Pages
+        uses: yanglbme/gitee-pages-action@main
+        with:
+          gitee-username: ${{ secrets.GITEE_USERNAME }}
+          gitee-password: ${{ secrets.GITEE_PASSWORD }}
+          gitee-repo: dns-host/github
+          branch: gh-pages
