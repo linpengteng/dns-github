@@ -1,5 +1,7 @@
 #!/usr/bin/env zx
 
+/* global $, fs, path */
+
 const writer = async arr => {
   let temp = {}
   const list = []
@@ -9,7 +11,7 @@ const writer = async arr => {
       list.push(temp = {
         file: path.resolve(url),
         contents: [],
-        content: ''
+        content: '',
       })
       continue
     }
@@ -58,7 +60,7 @@ const updater = async arr => {
 const nslookup = async url => {
   try {
     const regex = new RegExp(`.*Name:\\s*[\\S]+\\s*Address:\\s*([0-9.]+)\\s*.*`, 'ims')
-    const dns = (await $ `nslookup ${url}`).stdout
+    const dns = (await $`nslookup ${url}`).stdout
     const ip = dns.replace(regex, '$1')
 
     if (!/\d+\.\d+\.\d+\.\d+/.test(ip)) {
@@ -108,5 +110,5 @@ writer([
   'github.blog',
   'github.com',
   'vscode.dev',
-  'github.io'
+  'github.io',
 ])
