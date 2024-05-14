@@ -24,5 +24,5 @@ DNS 污染，是指一些刻意或无意制造出来的数据包，把域名指�
 
 - `Right DNS IP` - 借助于 **Github Actions** 定时更新 DNS IP (脚本: scripts/bin.mjs)
 
-  - [https://dns-host.gitee.io/github/host.txt](https://dns-host.gitee.io/github/host.txt) (推荐)
+  - [~~https://dns-host.gitee.io/github/host.txt~~](https://dns-host.gitee.io/github/host.txt) (目前 gitee 已暂停 Pages 服务)
   - [https://dns-host.github.io/github/host.txt](https://dns-host.github.io/github/host.txt)
