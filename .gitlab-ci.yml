@@ -1,5 +1,9 @@
 image: node:lts
 
+cache:
+  paths:
+    - node_modules/
+
 pages:
   script:
     - npm install -g pnpm
