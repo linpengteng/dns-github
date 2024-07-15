@@ -9,14 +9,14 @@
     "build": "zx scripts/bin.mjs"
   },
   "devDependencies": {
-    "@eslint/config-inspector": "^0.4.8",
-    "@eslint/js": "^9.3.0",
-    "@stylistic/eslint-plugin": "^2.1.0",
+    "@eslint/config-inspector": "^0.5.1",
+    "@eslint/js": "^9.7.0",
+    "@stylistic/eslint-plugin": "^2.3.0",
     "@types/eslint": "^8.56.10",
-    "eslint": "^9.3.0",
-    "typescript": "^5.4.5",
-    "typescript-eslint": "^7.8.0",
-    "zx": "^8.0.1"
+    "eslint": "^9.7.0",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^7.16.0",
+    "zx": "^8.1.4"
   },
   "engines": {
     "node": ">=18.0.0",
