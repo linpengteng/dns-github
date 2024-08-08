@@ -1,7 +1,7 @@
 {
-  "name": "dns-host",
+  "name": "dns-github",
   "version": "1.0.0",
-  "description": "DNS Remote Host Proxyer (eg. Github)",
+  "description": "Github DNS Remote Host Proxyer",
   "author": "lin pengteng <china.linpengteng@gmail.com>",
   "license": "MIT",
   "type": "module",

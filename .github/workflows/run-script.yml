@@ -7,7 +7,7 @@ on:
     branches: [main]
 
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 */8 * * *'
 
   workflow_dispatch:
 
@@ -69,13 +69,15 @@ jobs:
       - name: Add And Push Gitee
         uses: Yikun/hub-mirror-action@master
         with:
-          src: github/dns-host
+          src: github/linpengteng
           dst: gitee/dns-host
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
           dst_token: ${{ secrets.GITEE_PERSONAL_TOKEN }}
-          static_list: 'github'
+          static_list: 'dns-github'
+          mappings: 'dns-github=>github'
+          src_account_type: user
+          dst_account_type: org
           force_update: true
-          account_type: org
 
   # deploy-gitee-repo:
   #   runs-on: ubuntu-latest
