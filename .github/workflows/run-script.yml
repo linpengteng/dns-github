@@ -7,7 +7,7 @@ on:
     branches: [main]
 
   schedule:
-    - cron: '0 */8 * * *'
+    - cron: '0 */12 * * *'
 
   workflow_dispatch:
 
@@ -62,22 +62,22 @@ jobs:
           user_email: ${{ secrets.MY_USER_EMAIL }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-  push-gitee-repo:
-    runs-on: ubuntu-latest
-    needs: github-host
-    steps:
-      - name: Add And Push Gitee
-        uses: Yikun/hub-mirror-action@master
-        with:
-          src: github/linpengteng
-          dst: gitee/dns-host
-          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-          dst_token: ${{ secrets.GITEE_PERSONAL_TOKEN }}
-          static_list: 'dns-github'
-          mappings: 'dns-github=>github'
-          src_account_type: user
-          dst_account_type: org
-          force_update: true
+  # push-gitee-repo:
+  #   runs-on: ubuntu-latest
+  #   needs: github-host
+  #   steps:
+  #     - name: Add And Push Gitee
+  #       uses: Yikun/hub-mirror-action@master
+  #       with:
+  #         src: github/linpengteng
+  #         dst: gitee/dns-host
+  #         dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+  #         dst_token: ${{ secrets.GITEE_PERSONAL_TOKEN }}
+  #         static_list: 'dns-github'
+  #         mappings: 'dns-github=>github'
+  #         src_account_type: user
+  #         dst_account_type: org
+  #         force_update: true
 
   # deploy-gitee-repo:
   #   runs-on: ubuntu-latest
